@@ -1,0 +1,12 @@
+{
+  "name": "postman-newman-queries",
+  "version": "1.0.0",
+  "description": "Project for storing postman tests",
+  "scripts": {
+    "api-tests-production": "newman run tests/Postman-Newman-collection.postman_collection.json"
+  },
+  "author": "Savithri",
+  "dependencies": {
+    "newman": "^4.1.0"
+  }
+}

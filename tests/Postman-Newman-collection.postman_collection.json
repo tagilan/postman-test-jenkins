@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "c3de1c97-b379-4a72-8309-abf5782647d7",
+		"name": "Postman/Newman collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Write a get request query using POSTMAN and verify Emotions in results",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e2f0211f-7a3f-4a9a-a7dc-6a3008ed3463",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"]=responseCode.code===200;",
+							"tests[\"Body Shoud contain no title\"]=responseBody ===\"no title\";",
+							"",
+							" "
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "FM1vsYmZPxfJ",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "25ed8d58-e4b6-4eaf-8519-d6edceaccc29",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://gateway.watsonplatform.net/discovery/api/v1/environments/04ffd14b-e5c1-43ed-8d11-6728227508c9/collections/1b74a18d-5e98-4166-ab5d-b0be4a693f2d/query?version=2018-08-01&aggregation=term%28enriched_text.entities.text%2Ccount%3A10%29&deduplicate=false&highlight=true&passages=true&passages.count=5&natural_language_query=Paris%20Hilton%20Stayed%20in%20Paris%2CFrance",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"watsonplatform",
+						"net"
+					],
+					"path": [
+						"discovery",
+						"api",
+						"v1",
+						"environments",
+						"04ffd14b-e5c1-43ed-8d11-6728227508c9",
+						"collections",
+						"1b74a18d-5e98-4166-ab5d-b0be4a693f2d",
+						"query"
+					],
+					"query": [
+						{
+							"key": "version",
+							"value": "2018-08-01"
+						},
+						{
+							"key": "aggregation",
+							"value": "term%28enriched_text.entities.text%2Ccount%3A10%29"
+						},
+						{
+							"key": "deduplicate",
+							"value": "false"
+						},
+						{
+							"key": "highlight",
+							"value": "true"
+						},
+						{
+							"key": "passages",
+							"value": "true"
+						},
+						{
+							"key": "passages.count",
+							"value": "5"
+						},
+						{
+							"key": "natural_language_query",
+							"value": "Paris%20Hilton%20Stayed%20in%20Paris%2CFrance"
+						}
+					]
+				},
+				"description": "\"1.Navigate to URL : https://discovery-us-south.watsonplatform.net/regions/us-south \n\n2.Login to discovery IBM watson Discovery with userid/password\n\n3. Click on goto Build queries.\n\n4. Select use natural language .\n\n5. type in a sample query \"\"Roller Coasters are terrifying, I am never going to go to theme park again\"\"\n\n6. Include aggregation: \"\"enriched_text.Categories.label\"\" and count = Top ten\n\n7. copy paste below query in the parameters box  :\nhttps://gateway.watsonplatform.net/discovery/api/v1/environments/04ffd14b-e5c1-43ed-8d11-6728227508c9/collections/1b74a18d-5e98-4166-ab5d-b0be4a693f2d/query?version=2018-08-01&aggregation=%5Bterm%28enriched_text.categories.label%2Ccount%3A10%29%2Cterm%28%2Ccount%3A10%29%5D&deduplicate=false&highlight=true&passages=true&passages.count=5&natural_language_query=Jason%20Willams%20will%20go%20Head-to-Head%20with%20Baron%20Davis%20During%20the%202017%20NBA%20All-Star%20Celeb%20Game%21%20http%3A%2F%2Fbit.ly%2FZloqs9U\"\"\n\n8. Select  \"\"GET\"\" request and click on Send button.\n  \"\n\n  \n"
+			},
+			"response": []
+		}
+	]
+}
